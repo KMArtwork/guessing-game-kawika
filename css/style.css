@@ -22,8 +22,13 @@ p {
     line-height: 1.5rem;
 }
 
-article {
+.flex {
     display: flex;
+    justify-content: space-evenly;
+}
+
+#top-ten h2 {
+    text-align: center;
 }
 
 .info {
