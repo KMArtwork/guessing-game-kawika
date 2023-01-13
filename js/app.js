@@ -6,6 +6,47 @@ function normalizeAnswer (answer) {
     return normalizedResponse;
 }
 
+function askQuestion (input, i, correct, incorrect, noAnswer, answers) {
+
+    let answer = prompt(input[i]);
+
+    while (!answer) {
+        alert('Dude, you have to at least try to answer the question...');
+        answer = prompt(input[i]);
+    }
+
+    alert(`${userName} answered ${answer}...`);
+    answer = normalizeAnswer(answer);
+    //console.log('normalized answer');
+
+    if (answer === answers[i]) {
+        //console.log('correct response')
+        alert(correct[i]);
+        score++;
+    } else if ((answer !== correct[i] && answer === 'N') || (answer !== correct[i] && answer === 'Y')) {
+        //console.log('incorrect response');
+        alert(incorrect[i]);
+    } else {
+        //console.log(j);
+        if (j >= noAnswer.length) {
+            alert(noAnswer[4]);
+        } else {
+            alert (noAnswer[j]);
+        }
+        j++;
+        newVar = true;
+        
+        //console.log(j);
+    }
+}
+
+let newVar;
+
+
+
+
+
+
 alert("Welcome to 'Wow, Who The Heck Is This Guy Anyways?' Where nothing is made up and the points don't matter.")
 
 let userName = prompt("Hey, you. Yeah, you! What's your name?");
@@ -71,36 +112,9 @@ let score = 0;
 let j = 0;
 
 for (let i = 0; i < questionsArr.length; i++) {
-
-    let answer = prompt(questionsArr[i]);
-
-    while (!answer) {
-        alert('Dude, you have to at least try to answer the question...');
-        answer = prompt(questionsArr[i]);
-    }
-
-    alert(`${userName} answered ${answer}...`);
-    answer = normalizeAnswer(answer);
-    //console.log('normalized answer');
-
-    if (answer === answersArr[i]) {
-        //console.log('correct response')
-        alert(responseCorrect[i]);
-        score++;
-    } else if ((answer != answersArr[i] && answer === 'N') || (answer != answersArr[i] && answer === 'Y')) {
-        //console.log('incorrect response');
-        alert(responseIncorrect[i]);
-    } else {
-        //console.log(j);
-        if (j >= responseInvalidAnswer.length) {
-            alert(responseInvalidAnswer[4]);
-        } else {
-            alert (responseInvalidAnswer[j]);
-        }
-        j++;
-        i--;
-        //console.log(j);
-    }
+    newVar = false;
+    askQuestion(questionsArr, i, responseCorrect, responseIncorrect, responseInvalidAnswer, answersArr);
+    if (newVar) {i--};
 }
 
 let randomNumber = Math.round(Math.random() * 21); //Math.random returns a random number between 0 and 1. When we multiply it by a number it scales the max range. However, if we multiply it by 20 it will only produce a number between 0 and 19, so by scaling it by 21 we set the range of possible numbers between 0 and 20.
