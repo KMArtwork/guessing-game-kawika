@@ -42,11 +42,6 @@ function askQuestion (input, i, correct, incorrect, noAnswer, answers) {
 
 let newVar;
 
-
-
-
-
-
 alert("Welcome to 'Wow, Who The Heck Is This Guy Anyways?' Where nothing is made up and the points don't matter.")
 
 let userName = prompt("Hey, you. Yeah, you! What's your name?");
