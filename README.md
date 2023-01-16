@@ -15,7 +15,7 @@ Kawika Miller was the Driver, Navigator was Chris Bascom.
 [My Own Css Notes](https://github.com/KMArtwork/CSS-Notes) I also referenced my own CSS notes that I've compiled from the courses I've taken on Codecademy to create the flexbox for my `Education`, `Job Experience`, and `Goals` sections of the web page.
 
 ### Lighthouse Accessibility Report Score
-![LightHouse Score](/img/Lighthouse_score.JPG)
+![LightHouse Score](/img/Lighthouse_score_day05.JPG)
 
 
 ### Reflections and Comments
