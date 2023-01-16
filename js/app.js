@@ -6,7 +6,7 @@ function normalizeAnswer (answer) {
     return normalizedResponse;
 }
 
-function askQuestion (input, i, correct, incorrect, noAnswer, answers) {
+function askQuestion (input, i, correct, incorrect, invalid, answers) {
 
     let answer = prompt(input[i]);
 
@@ -28,19 +28,19 @@ function askQuestion (input, i, correct, incorrect, noAnswer, answers) {
         alert(incorrect[i]);
     } else {
         //console.log(j);
-        if (j >= noAnswer.length) {
-            alert(noAnswer[4]);
+        if (j >= invalid.length) {
+            alert(invalid[4]);
         } else {
-            alert (noAnswer[j]);
+            alert (invalid[j]);
         }
         j++;
-        newVar = true;
+        isInvalidAnswer = true;
         
         //console.log(j);
     }
 }
 
-let newVar;
+let isInvalidAnswer;
 
 alert("Welcome to 'Wow, Who The Heck Is This Guy Anyways?' Where nothing is made up and the points don't matter.")
 
@@ -107,9 +107,9 @@ let score = 0;
 let j = 0;
 
 for (let i = 0; i < questionsArr.length; i++) {
-    newVar = false;
+    isInvalidAnswer = false;
     askQuestion(questionsArr, i, responseCorrect, responseIncorrect, responseInvalidAnswer, answersArr);
-    if (newVar) {i--};
+    if (isInvalidAnswer) {i--};
 }
 
 let randomNumber = Math.round(Math.random() * 21); //Math.random returns a random number between 0 and 1. When we multiply it by a number it scales the max range. However, if we multiply it by 20 it will only produce a number between 0 and 19, so by scaling it by 21 we set the range of possible numbers between 0 and 20.
