@@ -8,7 +8,7 @@ This is a guessing game which is meant to demonstrate my current understanding o
 
 ### Links and Resources
 
-Kawika Miller was the Driver, Navigator was Chris Bascom. 
+Kawika Miller was the Driver, Navigator was Chris Bascom for Lab 04. 
 
 [String.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt) was used in my `normalizeAnswer` function. This function gets the first letter of a response string, which is expected to be "yes" or "no", and then capitalized that letter so that the conditional checks only need to check for "Y" or "N".
 
